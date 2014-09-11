@@ -6,5 +6,6 @@ gz = open('http://data.githubarchive.org/2012-03-11-12.json.gz')
 js = Zlib::GzipReader.new(gz).read
  
 Yajl::Parser.parse(js) do |event|
-  print event
+  jsonstr = event
+  puts event
 end
